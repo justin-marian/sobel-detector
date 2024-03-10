@@ -24,9 +24,9 @@ Image processing utilities for handling **PPM (Portable Pixmap)** format images,
 
 ## Combine and Rotate
 
-- **Vertical Concatenation:** Combines two images of the same width into one, with the first image on the top and the second on the bottom.
-- **Horizontal Concatenation:** Joins two images of the same height side by side, with the first image on the left and the second on the right.
-- **Image Rotation:** Rotates an image by multiples of **90 degrees counterclockwise**, transforming the image's orientation.
+- **Vertical Concatenation:** Combines two images of the same width into one, with the **first** image **on the top** and the **second on the bottom**.
+- **Horizontal Concatenation:** Joins two images of the same height side by side, with the **first** image **on the left** and the **second on the right**.
+- **Image Rotation:** Rotates an image by multiples of **90 degrees counterclockwise**.
 
 ## Sobel Edge Detection
 

@@ -85,10 +85,7 @@ The simplest way to describe a line in Pascal's Triangle is:
 
 Colors are defined by `Pixel` object value, with the `pickColor` function determining the color mapping. Any values above the main diagonal default to black, remaining unaltered by `pickColor`.
 
-**Note:** that a value on line $n$ and column $k$ is $C_n^k$ its value is the sum above it, becoming $C_n^k = C_{n-1}^{k-1} + C_{n-1}^k$.
-
-- Each line in Pascal's Triangle is denoted by $C_n^0, C_n^1, \ldots, C_n^n$ for line number $n$.
-- Compute each $l_i$ as $l_i % M$ to prevent overflow, using the recursion $l_i = (l_{i-1}^p + l_i^p) % M$.
+**Note:** that a value on line $n$ and column $k$ is $C_n^k$ its value is the sum above it, becoming $C_n^k = C_{n-1}^{k-1} + C_{n-1}^k$. Each line in Pascal's Triangle is denoted by $C_n^0, C_n^1, \ldots, C_n^n$ for line number $n$.
 
 $$
 C_{mod}^{k} = C^{k}{n} mod M

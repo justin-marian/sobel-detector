@@ -87,8 +87,15 @@ Colors are defined by `Pixel` object value, with the `pickColor` function determ
 
 **Note:** that a value on line $n$ and column $k$ is $C_n^k$ its value is the sum above it, becoming $C_n^k = C_{n-1}^{k-1} + C_{n-1}^k$.
 
-Each line in Pascal's Triangle is denoted by $C_n^0, C_n^1, \ldots, C_n^n$ for line number $n$. We compute each $l_i$ as $l_i % M$ to prevent overflow, using the recursion $l_i = (l_{i-1}^p + l_i^p) % M$.
+- Each line in Pascal's Triangle is denoted by $C_n^0, C_n^1, \ldots, C_n^n$ for line number $n$.
+- Compute each $l_i$ as $l_i % M$ to prevent overflow, using the recursion $l_i = (l_{i-1}^p + l_i^p) % M$.
 
-$$C_{mod}^{k} = C^{k}_{n}\%M = (C^{k-1}_{n-1} + C^{k}_{n-1})\%M = ((C^{k-1}_{n-1}\%M + C^{k}_{n-1}\%M)\%M)$$
+$$
+\begin{align*}
+    C_{\text{mod}}^{k} &\,=\, C^{k}_{n} \, \% \, M \\
+        &\,=\, \left( C^{k-1}_{n-1} + C^{k}_{n-1} \right) \, \% \, M \\
+        &\,=\, \left( \left( C^{k-1}_{n-1} \, \% \, M \right) + \left( C^{k}_{n-1} \, \% \, M \right) \right) \, \% \, M
+\end{align*}
+$$
 
 Pascal's Triangle with modulo operations generates visual patterns, where the modulus value $M$ dictates the number of color variations. This approach creates a repeating color pattern across the triangle.

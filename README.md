@@ -91,11 +91,9 @@ Colors are defined by `Pixel` object value, with the `pickColor` function determ
 - Compute each $l_i$ as $l_i % M$ to prevent overflow, using the recursion $l_i = (l_{i-1}^p + l_i^p) % M$.
 
 $$
-\begin{align*}
-    C_{\text{mod}}^{k} &\,=\, C^{k}_{n} \, \% \, M \\
-        &\,=\, \left( C^{k-1}_{n-1} + C^{k}_{n-1} \right) \, \% \, M \\
-        &\,=\, \left( \left( C^{k-1}_{n-1} \, \% \, M \right) + \left( C^{k}_{n-1} \, \% \, M \right) \right) \, \% \, M
-\end{align*}
+C_{mod}^{k} = C^{k}{n} mod M
+= (C^{k-1}{n-1} + C^{k}{n-1}) mod M
+= ((C^{k-1}{n-1} mod M) + (C^{k}_{n-1} mod M)) mod M
 $$
 
 Pascal's Triangle with modulo operations generates visual patterns, where the modulus value $M$ dictates the number of color variations. This approach creates a repeating color pattern across the triangle.

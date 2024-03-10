@@ -6,7 +6,7 @@ Image processing utilities for handling **PPM (Portable Pixmap)** format images,
 
 ### Getting Started
 
-- Ensure that `Scala` and `sbt` are installed on your machine. Clone this repository and navigate into the project directory.
+- Ensure that `Scala` and `sbt` are installed on your machine.
 - The main functions are encapsulated in `Solution.scala`, with utily types and functions defined in: `util/Util.scala` and `util/Pixel.scala`.
 
 ### PPM File Structure

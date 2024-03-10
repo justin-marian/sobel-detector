@@ -1,11 +1,11 @@
 # PPM Image Processing
 
-The project provides image processing utilities for handling **PPM (Portable Pixmap)** format images, as defined by the `Netpbm` format. It includes functions for image *concatenation* (*both vertically and horizontally*), *rotation*, and *generating visual patterns* from **Pascal's triangle with color modulation**. The utilities are designed to be **purely functional**, avoiding *side effects* and *mutable state*.
+Image processing utilities for handling **PPM (Portable Pixmap)** format images, as defined by the `Netpbm` format. It includes functions for image *concatenation* (*both vertically and horizontally*), *rotation*, and *generating visual patterns* from **Pascal's triangle with color modulation**. Project is designed to be **purely functional**, avoiding *side effects* and *mutable state*.
 
 ## Getting Started
 
-- To utilize these utilities, ensure `Scala` and `sbt` are installed on your machine. Clone this repository and navigate into the project directory.
-- The main functions are encapsulated in `Solution.scala`, with utily types and functions defined in `util/Util.scala` and `util/Pixel.scala`.
+To utilize these utilities, ensure `Scala` and `sbt` are installed on your machine. Clone this repository and navigate into the project directory.
+The main functions are encapsulated in `Solution.scala`, with utily types and functions defined in `util/Util.scala` and `util/Pixel.scala`.
 
 ### PPM File Structure
 
@@ -13,8 +13,8 @@ PPM files start with the header `P3`, indicating the PPM format, followed by the
 
 ### Image Structure
 
-- **Images** are represented as a list of lists of Pixel objects (*type `Image = List[List[Pixel]]`*), where each `Pixel` holds **integer RGB values**.
-- **Grayscale** version of the image is represented similarly, with double precision values (*type `GrayscaleImage = List[List[Double]]`*).
+**Images** are represented as a list of lists of Pixel objects (*type `Image = List[List[Pixel]]`*), where each `Pixel` holds **integer RGB values**.
+**Grayscale** version of the image is represented similarly, with double precision values (*type `GrayscaleImage = List[List[Double]]`*).
 
 ## Combine and Rotate
 
@@ -29,7 +29,7 @@ The `Sobel Edge Detection` applies a series of steps to detect edges within an i
 **Example:** (how the convolution is performed on matrixes)
 
 <p align="center">
-    <img src="./pictures/convolution.gif" alt="CONVOLUTION_EXAMPLE" width="50%" height="auto"/>
+    <img src="./pictures/convolution.gif" alt="CONVOLUTION_EXAMPLE" width="75%" height="auto"/>
 </p>
 
 **Grayscale Conversion:** simplifies an image to shades of gray, reducing complexity and focusing on intensity, which is crucial for the effectiveness of blur and edge detection processes.
@@ -81,8 +81,8 @@ Colors are defined by `Pixel` object value, with the `pickColor` function determ
 
 **Note:** that a value on line $n$ and column $k$ is $C_n^k$ its value is the sum above it, becoming $C_n^k = C_{n-1}^{k-1} + C_{n-1}^k$.
 
-Using this recursive relationship, as it is more efficient from the standpoint of temporal complexity than the formula with factorials. Each line in Pascal's Triangle is denoted by $C_n^0, C_n^1, \ldots, C_n^n$ for line number $n$. We compute each $l_i$ as $l_i % M$ to prevent overflow, using the recursion $l_i = (l_{i-1}^p + l_i^p) % M$.
+Each line in Pascal's Triangle is denoted by $C_n^0, C_n^1, \ldots, C_n^n$ for line number $n$. We compute each $l_i$ as $l_i % M$ to prevent overflow, using the recursion $l_i = (l_{i-1}^p + l_i^p) % M$.
 
-$$ C_{mod}^{k} = C^{k}_{n}\%M = (C^{k-1}_{n-1} + C^{k}_{n-1})\%M = ((C^{k-1}_{n-1}\%M + C^{k}_{n-1}\%M)\%M)$$
+$$C_{mod}^{k} = C^{k}_{n}\%M = (C^{k-1}_{n-1} + C^{k}_{n-1})\%M = ((C^{k-1}_{n-1}\%M + C^{k}_{n-1}\%M)\%M)$$
 
 Pascal's Triangle with modulo operations generates visual patterns, where the modulus value $M$ dictates the number of color variations. This approach creates a repeating color pattern across the triangle.

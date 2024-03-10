@@ -88,7 +88,7 @@ Colors are defined by `Pixel` object value, with the `pickColor` function determ
 **Note:** that a value on line $n$ and column $k$ is $C_n^k$ its value is the sum above it, becoming $C_n^k = C_{n-1}^{k-1} + C_{n-1}^k$. Each line in Pascal's Triangle is denoted by $C_n^0, C_n^1, \ldots, C_n^n$ for line number $n$.
 
 $$
-C_{mod}^{k} = C^{k}_{n} mod M
+C_{mod}^{k} = C_{n}^{k} mod M
 = (C_{n-1}^{k-1} + C_{n-1}^{k}) mod M
 = ((C_{n-1}^{k-1} mod M) + (C_{n-1}^{k} mod M)) mod M
 $$

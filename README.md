@@ -1,10 +1,11 @@
 # PPM Image Processing
 
-Image processing utilities for handling **PPM (Portable Pixmap)** format images, as defined by the `Netpbm` format. It includes functions for image *concatenation* (*both vertically and horizontally*), *rotation*, and *generating visual patterns* from **Pascal's triangle with color modulation**. Project is designed to be **purely functional**, avoiding *side effects* and *mutable state*.
+Image processing utilities for handling **PPM (Portable Pixmap)** format images, as defined by the [Netpbm](https://en.wikipedia.org/wiki/Netpbm) format. It includes functions for image *concatenation* (*both vertically and horizontally*), *rotation*, and *generating visual patterns* from **Pascal's triangle with color modulation**. Project is designed to be **purely functional**, avoiding *side effects* and *mutable state*.
 
 ## Getting Started
 
 To utilize these utilities, ensure `Scala` and `sbt` are installed on your machine. Clone this repository and navigate into the project directory.
+
 The main functions are encapsulated in `Solution.scala`, with utily types and functions defined in `util/Util.scala` and `util/Pixel.scala`.
 
 ### PPM File Structure
@@ -14,13 +15,14 @@ PPM files start with the header `P3`, indicating the PPM format, followed by the
 ### Image Structure
 
 **Images** are represented as a list of lists of Pixel objects (*type `Image = List[List[Pixel]]`*), where each `Pixel` holds **integer RGB values**.
+
 **Grayscale** version of the image is represented similarly, with double precision values (*type `GrayscaleImage = List[List[Double]]`*).
 
 ## Combine and Rotate
 
-- **Vertical Concatenation:** Combines two images of the same width into one, placing the first image above the second.
-- **Horizontal Concatenation:** Joins two images of the same height side by side, with the first image on the left and the second on the right.
-- **Image Rotation:** Rotates an image by multiples of **90 degrees counterclockwise**, transforming the image's orientation.
+**Vertical Concatenation:** Combines two images of the same width into one, placing the first image above the second.
+**Horizontal Concatenation:** Joins two images of the same height side by side, with the first image on the left and the second on the right.
+**Image Rotation:** Rotates an image by multiples of **90 degrees counterclockwise**, transforming the image's orientation.
 
 ## Sobel Edge Detection
 
@@ -34,7 +36,7 @@ The `Sobel Edge Detection` applies a series of steps to detect edges within an i
 
 **Grayscale Conversion:** simplifies an image to shades of gray, reducing complexity and focusing on intensity, which is crucial for the effectiveness of blur and edge detection processes.
 
-**Gaussian Kernel:** applied to the image using a convolution kernel, which is a matrix of weights. The **Blur Gaussian kernel** is determined based on the *Gaussian function*, which assigns higher weights to pixels closer to the center of the kernel and lower weights to those further away. This mimics the effect of blurring or smoothing in the human eye.
+**Gaussian Kernel:** applied to the image using a convolution kernel, which is a matrix of weights. The **Blur Gaussian kernel** is determined based on the *Gaussian function*, which assigns higher weights to pixels closer to the center of the kernel and lower weights to those further away.
 
 $$ gaussianBlurKernel =
 \begin{bmatrix}
@@ -46,7 +48,7 @@ $$ gaussianBlurKernel =
 \end{bmatrix}
 $$
 
-**Convolution Process:** each pixel is recalculated using a weighted average of itself and surrounding pixels based on the Gaussian kernel. The convolution with these **intensity edge kernels** adjusts the brightness of each pixel based on its neighbors, the result is softened edges, reduced noise, and minimized minor variations.
+**Convolution Process:** each pixel is recalculated using a weighted average of itself and surrounding pixels based on the Gaussian kernel. The convolution with these **intensity edge kernels** adjusts the brightness of each pixel based on its neighbors, the result is softened edges.
 
 $$ G_x =
 \begin{bmatrix}

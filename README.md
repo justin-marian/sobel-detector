@@ -2,13 +2,11 @@
 
 ## Description
 
-Image processing utilities for handling **PPM (Portable Pixmap)** format images, as defined by the [Netpbm](https://en.wikipedia.org/wiki/Netpbm) format. It includes functions for image *concatenation* (*both vertically and horizontally*), *rotation*, and *generating visual patterns* from **Pascal's triangle with color modulation**. Designed to be **purely functional**, avoiding *side effects* and *mutable state*.
+Image processing utilities for handling **PPM (Portable Pixmap)** format images, as defined by the [Netpbm](https://en.wikipedia.org/wiki/Netpbm) format. It includes functions for image *concatenation* (*vertically and horizontally*), *rotation*, and *generating visual patterns* from **Pascal's triangle with color modulation**. Designed to be **purely functional**, avoids *side effects* and *mutable state*.
 
 ### Getting Started
 
-Ensure that `Scala` and `sbt` are installed on your machine. Clone this repository and navigate into the project directory.
-
-The main functions are encapsulated in `Solution.scala`, with utily types and functions defined in `util/Util.scala` and `util/Pixel.scala`.
+Ensure that `Scala` and `sbt` are installed on your machine. Clone this repository and navigate into the project directory. The main functions are encapsulated in `Solution.scala`, with utily types and functions defined in: `util/Util.scala` and `util/Pixel.scala`.
 
 ### PPM File Structure
 
@@ -17,15 +15,12 @@ PPM files start with the header `P3`, indicating the PPM format, followed by the
 ### Image Structure
 
 **Images** are a list of lists of Pixel objects (*type `Image = List[List[Pixel]]`*), where each `Pixel` holds **integer RGB values**.
-
 **Grayscale** version of the image is represented similarly, with double precision values (*type `GrayscaleImage = List[List[Double]]`*).
 
 ## Combine and Rotate
 
 **Vertical Concatenation:** Combines two images of the same width into one, with the first image on the top and the second on the bottom.
-
 **Horizontal Concatenation:** Joins two images of the same height side by side, with the first image on the left and the second on the right.
-
 **Image Rotation:** Rotates an image by multiples of **90 degrees counterclockwise**, transforming the image's orientation.
 
 ## Sobel Edge Detection

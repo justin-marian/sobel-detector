@@ -35,7 +35,7 @@ The `Sobel Edge Detection` applies a series of steps to detect edges within an i
 **Example:** (how the convolution is performed on matrixes)
 
 <p align="center">
-    <img src="./pictures/convolution.gif" alt="CONVOLUTION_EXAMPLE" width="75%" height="auto"/>
+    <img src="./pictures/convolution.gif" alt="CONVOLUTION_EXAMPLE" width="65%" height="auto"/>
 </p>
 
 **Grayscale Conversion:** simplifies an image to shades of gray, reducing complexity and focusing on intensity, which is crucial for the effectiveness of blur and edge detection processes.

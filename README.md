@@ -1,8 +1,10 @@
 # PPM Image Processing
 
+## Description
+
 Image processing utilities for handling **PPM (Portable Pixmap)** format images, as defined by the [Netpbm](https://en.wikipedia.org/wiki/Netpbm) format. It includes functions for image *concatenation* (*both vertically and horizontally*), *rotation*, and *generating visual patterns* from **Pascal's triangle with color modulation**. Project is designed to be **purely functional**, avoiding *side effects* and *mutable state*.
 
-## Getting Started
+### Getting Started
 
 To utilize these utilities, ensure `Scala` and `sbt` are installed on your machine. Clone this repository and navigate into the project directory.
 
@@ -21,7 +23,9 @@ PPM files start with the header `P3`, indicating the PPM format, followed by the
 ## Combine and Rotate
 
 **Vertical Concatenation:** Combines two images of the same width into one, placing the first image above the second.
+
 **Horizontal Concatenation:** Joins two images of the same height side by side, with the first image on the left and the second on the right.
+
 **Image Rotation:** Rotates an image by multiples of **90 degrees counterclockwise**, transforming the image's orientation.
 
 ## Sobel Edge Detection

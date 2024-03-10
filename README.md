@@ -16,8 +16,11 @@ Image processing utilities for handling **PPM (Portable Pixmap)** format images,
 
 ### Image Structure
 
-- **Images** are a list of lists of Pixel objects (*`Image = List[List[Pixel]]`*), where each `Pixel` holds **integer RGB values**.
-- **Grayscale** version of the image is represented similarly, with double precision values (*`GrayscaleImage = List[List[Double]]`*).
+- `Pixel` holds **integer RGB values**.
+- **Images** are a list of lists of Pixel objects:
+  - (*`Image = List[List[Pixel]]`*)
+- **Grayscale** image  witha gray filter, contains double precision values:
+  - (*`GrayscaleImage = List[List[Double]]`*)
 
 ## Combine and Rotate
 

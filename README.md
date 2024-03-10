@@ -2,11 +2,11 @@
 
 ## Description
 
-Image processing utilities for handling **PPM (Portable Pixmap)** format images, as defined by the [Netpbm](https://en.wikipedia.org/wiki/Netpbm) format. It includes functions for image *concatenation* (*both vertically and horizontally*), *rotation*, and *generating visual patterns* from **Pascal's triangle with color modulation**. Project is designed to be **purely functional**, avoiding *side effects* and *mutable state*.
+Image processing utilities for handling **PPM (Portable Pixmap)** format images, as defined by the [Netpbm](https://en.wikipedia.org/wiki/Netpbm) format. It includes functions for image *concatenation* (*both vertically and horizontally*), *rotation*, and *generating visual patterns* from **Pascal's triangle with color modulation**. Designed to be **purely functional**, avoiding *side effects* and *mutable state*.
 
 ### Getting Started
 
-To utilize these utilities, ensure `Scala` and `sbt` are installed on your machine. Clone this repository and navigate into the project directory.
+Ensure that `Scala` and `sbt` are installed on your machine. Clone this repository and navigate into the project directory.
 
 The main functions are encapsulated in `Solution.scala`, with utily types and functions defined in `util/Util.scala` and `util/Pixel.scala`.
 
@@ -16,13 +16,13 @@ PPM files start with the header `P3`, indicating the PPM format, followed by the
 
 ### Image Structure
 
-**Images** are represented as a list of lists of Pixel objects (*type `Image = List[List[Pixel]]`*), where each `Pixel` holds **integer RGB values**.
+**Images** are a list of lists of Pixel objects (*type `Image = List[List[Pixel]]`*), where each `Pixel` holds **integer RGB values**.
 
 **Grayscale** version of the image is represented similarly, with double precision values (*type `GrayscaleImage = List[List[Double]]`*).
 
 ## Combine and Rotate
 
-**Vertical Concatenation:** Combines two images of the same width into one, placing the first image above the second.
+**Vertical Concatenation:** Combines two images of the same width into one, with the first image on the top and the second on the bottom.
 
 **Horizontal Concatenation:** Joins two images of the same height side by side, with the first image on the left and the second on the right.
 
@@ -30,7 +30,7 @@ PPM files start with the header `P3`, indicating the PPM format, followed by the
 
 ## Sobel Edge Detection
 
-The `Sobel Edge Detection` applies a series of steps to detect edges within an image. It onverts the image to **grayscale**, applying **Gaussian blur** to smooth the image, using the **Sobel operator to detect edge gradients, combining these gradients to highlight edges, and applying a threshold to distinguish edges clearly.
+The `Sobel Edge Detection` applies a series of steps to detect edges within an image. It onverts the image to **grayscale**, applying **Gaussian blur** to smooth the image, using the **Sobel operator** to detect edge gradients, combining these gradients to highlight edges, and applying a threshold to distinguish edges clearly.
 
 **Example:** (how the convolution is performed on matrixes)
 
@@ -40,7 +40,7 @@ The `Sobel Edge Detection` applies a series of steps to detect edges within an i
 
 **Grayscale Conversion:** simplifies an image to shades of gray, reducing complexity and focusing on intensity, which is crucial for the effectiveness of blur and edge detection processes.
 
-**Gaussian Kernel:** applied to the image using a convolution kernel, which is a matrix of weights. The **Blur Gaussian kernel** is determined based on the *Gaussian function*, which assigns higher weights to pixels closer to the center of the kernel and lower weights to those further away.
+**Gaussian Kernel:** applied to the image using a convolution kernel, which is a matrix of weights. The **Blur Gaussian kernel** is determined based on the *Gaussian function*, it assigns higher weights to pixels closer to the center of the kernel and lower weights to those further away.
 
 $$ gaussianBlurKernel =
 \begin{bmatrix}
